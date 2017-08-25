@@ -19,6 +19,8 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'authtools',
+    'braces',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
