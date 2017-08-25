@@ -1,0 +1,12 @@
+description "Gunicorn application server handling myproject"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+
+respawn
+setuid user
+setgid www-data
+chdir /home/pkemey/w/d
+
+exec bin/gunicorn --workers 3 --bind unix:/home/user/myproject/myproject.sock myproject.wsgi:application
+
