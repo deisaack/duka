@@ -11,8 +11,8 @@ env:
   - DJANGO=1.11
 
 before_install:
-  - export DJANGO_SETTINGS_MODULE="digitech.settings"
-  - export PYTHONPATH="/home/travis/builds/kipkemei/digitech"
+  - export DJANGO_SETTINGS_MODULE="duka.settings"
+  - export PYTHONPATH="/home/travis/builds/kipkemei/duka"
   - export PIP_USE_MIRRORS=true
 
 before_script:
