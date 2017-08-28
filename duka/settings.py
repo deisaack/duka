@@ -7,10 +7,16 @@ SECRET_KEY = '&4d%okc1wx6r#y&*&h2q63v=p+=92orqiy)l)%v$-s*8q8o4d='
 DEBUG = False
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'me@gmail.com'
-EMAIL_HOST_PASSWORD = 'pwd'
+EMAIL_HOST_USER = 'deisaack@gmail.com'
+EMAIL_HOST_PASSWORD = 'Jacktone1'
 EMAIL_PORT =587
 EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = "Isaac <deisaack@gmail.com>"
+
+
+ADMINS = [('Isaac', EMAIL_HOST_USER)]
+MANAGERS = ADMINS
 
 INSTALLED_APPS = [
     'rest_framework',
@@ -37,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -92,8 +99,11 @@ USE_L10N = True
 USE_TZ = True
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'live/static')
-LIVE_DIR = os.path.join(os.path.dirname(BASE_DIR), "live")
+LIVE_DIR = os.path.join(BASE_DIR, "live")
 STATIC_ROOT = os.path.join(LIVE_DIR, "static")
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
