@@ -72,19 +72,19 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'duka.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'duka_db',
-        'USER': 'duka_user',
-        'PASSWORD': 'duka_pwd',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'duka_db',
+#         'USER': 'duka_user',
+#         'PASSWORD': 'duka_pwd',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+# import dj_database_url
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
 
 SITE_ID = 1
 
@@ -125,12 +125,12 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'duka.herokuapp.com']
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
     }
+}
 
 if 'TRAVIS' in os.environ:
     DATABASES = {
