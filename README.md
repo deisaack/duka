@@ -74,7 +74,7 @@ sudo supervisorctl update
 </span>    <span class="c1"># or a domain pointing to that ip (like example.com or www.duka.herokuapp.com)
 </span>    <span class="kn">server_name</span> <span class="mi">107</span><span class="s">.178.28.172</span><span class="p">;</span>
 upstream app_server {
-    server unix:/home/urban/run/gunicorn.sock fail_timeout=0;
+    server unix:/home/duka/run/gunicorn.sock fail_timeout=0;
 }
 
 server {
@@ -87,11 +87,11 @@ server {
     keepalive_timeout 5;
     client_max_body_size 4G;
 
-    access_log /home/urban/logs/nginx-access.log;
-    error_log /home/urban/logs/nginx-error.log;
+    access_log /home/duka/logs/nginx-access.log;
+    error_log /home/duka/logs/nginx-error.log;
 
     location /static/ {
-        alias /home/urban/static/;
+        alias /home/duka/static/;
     }
 
     # checks for static file, if not found proxy to app
