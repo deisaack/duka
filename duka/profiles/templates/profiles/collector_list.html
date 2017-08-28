@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if collector_list %}
+    <table border="1px">
+        <th>No</th><th>Collector No:</th><th>User</th><th>ID NO</th><th>Centre</th>
+    {% for collector in collector_list %}
+       <tr><td>{{ forloop.counter }}</td><td><a href="{{ collector.get_absolute_url }}">{{ collector.collector_no }}</a>
+        </td><td>{{ collector.user.name}}</td><td>{{ collector.id_no }}</td>
+           <td>{{ collector.centre }}</td></tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}
+

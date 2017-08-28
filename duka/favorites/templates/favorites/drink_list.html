@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for drink in drink_list %}
+        {{ forloop.counter }} : <a href="{{ drink.get_absolute_url }}">{{ drink }}</a> <br>
+    {% endfor %}
+{% endblock %}

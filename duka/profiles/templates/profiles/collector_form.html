@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block container %}
+   <h1>Create a Data Collector</h1>
+    <form enctype="multipart/form-data" method="post">
+{#    {{ form|crispy }}#}
+	{% crispy form %}
+{#	{% crispy profile_form %}#}
+      </form>
+{% endblock %}

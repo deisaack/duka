@@ -1,0 +1,62 @@
+[
+{
+    "model": "favorites.favorite",
+    "pk": 7,
+    "fields": {
+        "name": "Godi Ndegwa",
+        "collector": 4,
+        "age_bracket": "30",
+        "location": "35,12.90",
+        "drink": 2,
+        "slug": "godi-ndegwa"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 2,
+    "fields": {
+        "name": "John Metto",
+        "collector": 7,
+        "age_bracket": "70>>",
+        "location": "6,32",
+        "drink": 4,
+        "slug": "john-metto"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 4,
+    "fields": {
+        "name": "Samson Okutoyi",
+        "collector": 7,
+        "age_bracket": "40-50",
+        "location": "6,32",
+        "drink": 1,
+        "slug": "samson-okutoyi"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 5,
+    "fields": {
+        "name": "Hippop Fredrick",
+        "collector": 5,
+        "age_bracket": "30-40",
+        "location": "65,23",
+        "drink": 2,
+        "slug": "hippop-fredrick"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 6,
+    "fields": {
+        "name": "Dolly Parton",
+        "collector": null,
+        "age_bracket": "50-60",
+        "location": "32,12.90",
+        "drink": 3,
+        "slug": "dolly-parton"
+    }
+}
+]

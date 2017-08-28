@@ -13,7 +13,7 @@ def create_profile_handler(sender, instance, created, **kwargs):
     if not created:
         return
     # Create the profile object, only if it is newly created
-    profile = models.DataCollector(user=instance)
+    profile = models.Collector(user=instance)
     profile.save()
     logger.info('New user profile for {} created'.format(instance))
 
@@ -21,5 +21,5 @@ def create_profile_handler(sender, instance, created, **kwargs):
 def save_profile(sender, instance, created, **kwargs):
     user = instance
     if created:
-        profile = models.DataCollector(user=user)
+        profile = models.Collector(user=user)
         profile.save()

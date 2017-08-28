@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ collector|upper }}</h2>
+    {% if collector.picture %}
+        <img src="{{ collector.picture.url }}" alt="Profile Picture" class="img img-circle" style="height: 100px">
+    {% endif %}
+    <br>
+    <b>Name: </b> {{ collector.user.name|upper }} <br>
+    <b>Centre: </b> {{ collector.centre }} <br>
+    <b>Collector No: </b> {{ collector.collector_no }} <br>
+    <b>ID NO: </b> {{ collector.id_no }} <br>
+    <b>Gender: </b> {{ collector.gender }} <br>
+    <b>Phone: </b> {{ collector.phone }}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if favorite_list %}
+    <table border="1px">
+        <th>No</th><th>Name</th><th>Age Bracket</th><th>Location</th><th>Drink</th>
+    {% for favorite in favorite_list %}
+       <tr><td>{{ forloop.counter }}</td><td><a href="{{ favorite.get_absolute_url }}">{{ favorite }}</a>
+        </td><td>{{ favorite.age_bracket}}</td><td>{{ favorite.location }}</td>
+           <td>{{ favorite.drink }}</td></tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

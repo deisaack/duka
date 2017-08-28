@@ -1,0 +1,93 @@
+[
+{
+    "model": "profiles.collector",
+    "pk": 2,
+    "fields": {
+        "picture": "",
+        "collector_no": "8787",
+        "id_no": null,
+        "dob": "2017-08-25",
+        "gender": "m",
+        "phone": "",
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 6,
+    "fields": {
+        "picture": "",
+        "collector_no": "yu8",
+        "id_no": null,
+        "dob": "2017-08-25",
+        "gender": null,
+        "phone": "",
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 4,
+    "fields": {
+        "picture": "",
+        "collector_no": "mnm",
+        "id_no": null,
+        "dob": "2017-08-25",
+        "gender": "f",
+        "phone": "",
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 7,
+    "fields": {
+        "picture": "",
+        "collector_no": null,
+        "id_no": null,
+        "dob": null,
+        "gender": null,
+        "phone": null,
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 1,
+    "fields": {
+        "picture": "",
+        "collector_no": "mnnm",
+        "id_no": null,
+        "dob": "2017-08-25",
+        "gender": "m",
+        "phone": "",
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 3,
+    "fields": {
+        "picture": "",
+        "collector_no": "C-345",
+        "id_no": 84949404,
+        "dob": "2017-08-25",
+        "gender": "m",
+        "phone": "+254721734568",
+        "centre": null
+    }
+},
+{
+    "model": "profiles.collector",
+    "pk": 5,
+    "fields": {
+        "picture": "profile_pics/2017-08-25/people-2.jpg",
+        "collector_no": "",
+        "id_no": null,
+        "dob": "2017-08-16",
+        "gender": null,
+        "phone": "",
+        "centre": null
+    }
+}
+]

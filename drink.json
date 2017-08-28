@@ -1,0 +1,42 @@
+[
+{
+    "model": "favorites.drink",
+    "pk": 1,
+    "fields": {
+        "name": "cocacola",
+        "slug": "cocacola"
+    }
+},
+{
+    "model": "favorites.drink",
+    "pk": 2,
+    "fields": {
+        "name": "Fanta",
+        "slug": "fanta"
+    }
+},
+{
+    "model": "favorites.drink",
+    "pk": 3,
+    "fields": {
+        "name": "Sprite",
+        "slug": "sprite"
+    }
+},
+{
+    "model": "favorites.drink",
+    "pk": 4,
+    "fields": {
+        "name": "Stonny",
+        "slug": "stonny"
+    }
+},
+{
+    "model": "favorites.drink",
+    "pk": 5,
+    "fields": {
+        "name": "Fanta Orange",
+        "slug": "fanta-orange"
+    }
+}
+]

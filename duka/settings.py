@@ -1,10 +1,20 @@
 import os
+from django.core.urlresolvers import reverse_lazy
+from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&4d%okc1wx6r#y&*&h2q63v=p+=92orqiy)l)%v$-s*8q8o4d='
 DEBUG = True
-ALLOWED_HOSTS = []
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'me@gmail.com'
+EMAIL_HOST_PASSWORD = 'pwd'
+EMAIL_PORT =587
+EMAIL_USE_TLS = True
+
 INSTALLED_APPS = [
+    'rest_framework',
+
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -16,11 +26,13 @@ INSTALLED_APPS = [
     'duka.accounts',
     'duka.profiles',
     'duka.favorites',
+    # 'duka.favorites.api',
 
     'crispy_forms',
     'authtools',
     'braces',
     'easy_thumbnails',
+    'geoposition',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +76,8 @@ DATABASES = {
     }
 }
 
+SITE_ID = 1
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Africa/Nairobi'
@@ -74,10 +88,36 @@ USE_L10N = True
 
 USE_TZ = True
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'live/static')
+LIVE_DIR = os.path.join(os.path.dirname(BASE_DIR), "live")
+STATIC_ROOT = os.path.join(LIVE_DIR, "static")
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(LIVE_DIR, 'live/media')
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCKKERHiiwDU37DQ719Uj93bXVlSGRMn9U'
 AUTH_USER_MODEL = 'authtools.User'
+LOGIN_REDIRECT_URL = reverse_lazy("home")
+LOGIN_URL = reverse_lazy("accounts:login")
+
+THUMBNAIL_EXTENSION = 'png'
+RISPY_TEMPLATE_PACK = 'bootstrap3'
+
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
+        }
+    }
 
 if 'TRAVIS' in os.environ:
     DATABASES = {
@@ -91,3 +131,11 @@ if 'TRAVIS' in os.environ:
         }
     }
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAdminUser',
+    ],
+    'PAGE_SIZE': 10
+}

@@ -1,0 +1,116 @@
+[
+{
+    "model": "authtools.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$4LaGIEHrz0oy$0KmFgIX4TVcqh5cJF9KlHpKFuoDEoOo2xB1D/Tr2GAg=",
+        "last_login": "2017-08-25T12:06:16.326Z",
+        "is_superuser": true,
+        "email": "pkemey@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-08-24T13:57:34.704Z",
+        "name": "Kipkemei Isaac",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$rs891S8hMkCT$cLHTDeGJUa/X4V4Nu65HZtV5yauwqnKvs/fXU9rZI2A=",
+        "last_login": "2017-08-27T10:25:47.893Z",
+        "is_superuser": true,
+        "email": "admin@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-08-25T12:06:03.233Z",
+        "name": "Admm",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$moRFrd0ZI0Gx$fYgB9LMb9TLI5DBf/ZnDny7PBwIl7VGamWJyuxuU0Pw=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "sam@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-08-25T13:01:02.181Z",
+        "name": "sam much",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$FgoaP6JxeBc5$k5jhfV3Jn4s6zDKJjtNmT42V+Ti/84keNkFBRoHaJSI=",
+        "last_login": null,
+        "is_superuser": false,
+        "email": "jane@gmail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2017-08-25T18:53:36.078Z",
+        "name": "Jane Ngujiri",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$HeJgTNVW9Opz$hhw9XodF8qK69JYTjDN549sDEUyU2PRFJ1pIN81N+L0=",
+        "last_login": "2017-08-25T19:07:56.193Z",
+        "is_superuser": false,
+        "email": "simon@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2017-08-25T19:05:24.291Z",
+        "name": "Simon Kobia",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$30000$uqxvKduL2dkL$9OBrclUL4fE+JS8SAIlhQNfXW/r3Xu+KXPldowTj6VA=",
+        "last_login": "2017-08-25T19:28:37.162Z",
+        "is_superuser": false,
+        "email": "amos@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-08-25T19:25:50.782Z",
+        "name": "amos ngasia",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "authtools.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$36000$HBdd64oVCE15$SXeB/oZDR+ujtr7+UV95QjJ5aHdeSogTXv+jkGKeJDk=",
+        "last_login": "2017-08-27T10:22:11.231Z",
+        "is_superuser": false,
+        "email": "janet@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2017-08-26T05:59:58.447Z",
+        "name": "Janet Ndiwa",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+}
+]

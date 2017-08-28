@@ -8,8 +8,6 @@ from authtools import views as authviews
 from braces import views as bracesviews
 from django.conf import settings
 from . import forms
-
-User = get_user_model()
 from django.shortcuts import render, redirect
 from .forms import SignupForm
 from django.contrib.sites.shortcuts import get_current_site
@@ -18,7 +16,9 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
-from duka.profiles.models import DataCollector
+from duka.profiles.models import Collector
+
+User = get_user_model()
 
 def signup(request):
     if request.method == 'POST':
@@ -55,9 +55,9 @@ def activate(request, uidb64, token):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
+        user.is_staff = True
         user.save()
-        profile = DataCollector.objects.create(user=user)
-        # user.profile.save()
+        Collector.objects.create(user=user)
         messages.success(request, 'Thank you for your email confirmation. Now you can login your account.')
         # login(request, user)
         return redirect('accounts:login')
