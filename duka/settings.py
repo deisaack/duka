@@ -4,7 +4,7 @@ from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&4d%okc1wx6r#y&*&h2q63v=p+=92orqiy)l)%v$-s*8q8o4d='
-DEBUG = True
+DEBUG = False
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'me@gmail.com'
@@ -75,6 +75,9 @@ DATABASES = {
         'PORT': '',
     }
 }
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 SITE_ID = 1
 
@@ -107,7 +110,7 @@ RISPY_TEMPLATE_PACK = 'bootstrap3'
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'duka.herokuapp.com']
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
