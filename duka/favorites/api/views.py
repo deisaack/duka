@@ -21,7 +21,7 @@ class FavoriteDeleteAPIView(DestroyAPIView):
 class FavoriteDetailAPIView(RetrieveAPIView):
     serializer_class = FavoriteDetailSerializer
     queryset = Favorite.objects.all()
-    lookup_url_kwarg = 'name'
+    # lookup_url_kwarg = 'name'
     lookup_field = 'slug'
 
 

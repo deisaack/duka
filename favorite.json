@@ -1,25 +1,15 @@
 [
 {
     "model": "favorites.favorite",
-    "pk": 7,
-    "fields": {
-        "name": "Godi Ndegwa",
-        "collector": 4,
-        "age_bracket": "30",
-        "location": "35,12.90",
-        "drink": 2,
-        "slug": "godi-ndegwa"
-    }
-},
-{
-    "model": "favorites.favorite",
     "pk": 2,
     "fields": {
-        "name": "John Metto",
-        "collector": 7,
-        "age_bracket": "70>>",
-        "location": "6,32",
-        "drink": 4,
+        "created": "2017-08-27T19:15:16.061Z",
+        "updated": "2017-08-28T08:19:44.969Z",
+        "name": "Patrick Namaswa Khaemba",
+        "collector": 4,
+        "age_bracket": "50-60",
+        "location": "32,12.90",
+        "drink": 1,
         "slug": "john-metto"
     }
 },
@@ -27,11 +17,13 @@
     "model": "favorites.favorite",
     "pk": 4,
     "fields": {
-        "name": "Samson Okutoyi",
-        "collector": 7,
+        "created": "2017-08-27T19:15:16.061Z",
+        "updated": "2017-08-27T21:26:16.854Z",
+        "name": "Samson Ndegwa",
+        "collector": 2,
         "age_bracket": "40-50",
         "location": "6,32",
-        "drink": 1,
+        "drink": 3,
         "slug": "samson-okutoyi"
     }
 },
@@ -39,11 +31,13 @@
     "model": "favorites.favorite",
     "pk": 5,
     "fields": {
+        "created": "2017-08-27T19:15:16.061Z",
+        "updated": "2017-08-27T19:29:24.677Z",
         "name": "Hippop Fredrick",
-        "collector": 5,
+        "collector": 2,
         "age_bracket": "30-40",
-        "location": "65,23",
-        "drink": 2,
+        "location": "165,23",
+        "drink": 4,
         "slug": "hippop-fredrick"
     }
 },
@@ -51,12 +45,154 @@
     "model": "favorites.favorite",
     "pk": 6,
     "fields": {
+        "created": "2017-08-27T19:15:16.061Z",
+        "updated": "2017-08-27T19:15:27.453Z",
         "name": "Dolly Parton",
-        "collector": null,
+        "collector": 4,
         "age_bracket": "50-60",
         "location": "32,12.90",
-        "drink": 3,
+        "drink": 5,
         "slug": "dolly-parton"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 7,
+    "fields": {
+        "created": "2017-08-27T19:15:16.061Z",
+        "updated": "2017-08-27T19:15:27.453Z",
+        "name": "Godi Ndegwa",
+        "collector": 1,
+        "age_bracket": "30",
+        "location": "35,12.90",
+        "drink": 4,
+        "slug": "godi-ndegwa"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 8,
+    "fields": {
+        "created": "2017-08-27T19:31:11.078Z",
+        "updated": "2017-08-27T19:31:11.079Z",
+        "name": "Helen Fredrick",
+        "collector": 3,
+        "age_bracket": "30-40",
+        "location": "165,23",
+        "drink": 4,
+        "slug": "helen-fredrick"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 9,
+    "fields": {
+        "created": "2017-08-27T19:33:50.652Z",
+        "updated": "2017-08-27T19:37:14.939Z",
+        "name": "Dolly frrrt",
+        "collector": 2,
+        "age_bracket": "50-60",
+        "location": "32,12.90",
+        "drink": 4,
+        "slug": "dolly-frrr"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 10,
+    "fields": {
+        "created": "2017-08-27T19:34:35.813Z",
+        "updated": "2017-08-27T19:34:35.813Z",
+        "name": "Dolly frrr",
+        "collector": 2,
+        "age_bracket": "50-60",
+        "location": "32,12.90",
+        "drink": 2,
+        "slug": "dolly-frrr-2"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 11,
+    "fields": {
+        "created": "2017-08-27T19:50:30.964Z",
+        "updated": "2017-08-27T19:50:30.964Z",
+        "name": "Maria",
+        "collector": 5,
+        "age_bracket": "50-60",
+        "location": "132,12.90",
+        "drink": 2,
+        "slug": "maria"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 12,
+    "fields": {
+        "created": "2017-08-27T19:56:04.227Z",
+        "updated": "2017-08-27T19:56:04.227Z",
+        "name": "Oakatapau",
+        "collector": 5,
+        "age_bracket": "50-60",
+        "location": null,
+        "drink": 1,
+        "slug": "oakatapau"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 13,
+    "fields": {
+        "created": "2017-08-28T07:44:07.392Z",
+        "updated": "2017-08-28T07:44:07.392Z",
+        "name": "Denis Khisa",
+        "collector": 7,
+        "age_bracket": "40-50",
+        "location": "89,21",
+        "drink": 5,
+        "slug": "denis-khisa"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 14,
+    "fields": {
+        "created": "2017-08-28T07:45:42.369Z",
+        "updated": "2017-08-28T07:45:42.369Z",
+        "name": "Isaac Kisiero",
+        "collector": 5,
+        "age_bracket": "70>>",
+        "location": "45,90",
+        "drink": 4,
+        "slug": "isaac-kisiero"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 15,
+    "fields": {
+        "created": "2017-08-28T07:59:03.668Z",
+        "updated": "2017-08-28T07:59:03.668Z",
+        "name": "qqq",
+        "collector": 3,
+        "age_bracket": "30-40",
+        "location": "4,5",
+        "drink": 2,
+        "slug": "qqq"
+    }
+},
+{
+    "model": "favorites.favorite",
+    "pk": 16,
+    "fields": {
+        "created": "2017-08-28T08:13:57.214Z",
+        "updated": "2017-08-28T08:13:57.214Z",
+        "name": "hjfd",
+        "collector": 1,
+        "age_bracket": "40-50",
+        "location": null,
+        "drink": 3,
+        "slug": "hjfd"
     }
 }
 ]

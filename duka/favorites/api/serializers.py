@@ -21,10 +21,13 @@ class FavoriteDetailSerializer(serializers.ModelSerializer):
 
 
 
-class FavoriteListSerializer(serializers.ModelSerializer):
+class FavoriteListSerializer(serializers.HyperlinkedModelSerializer):
     data_collector = serializers.ReadOnlyField(source='collector.user.name')
+    favorite_drink = serializers.ReadOnlyField(source='drink.name')
     class Meta:
         model = Favorite
-        fields = ('id', 'data_collector', 'name', 'slug')
-
+        fields = ('name', 'favorite_drink', 'data_collector',  'url',)
+        extra_kwargs = {
+            'url': {'view_name': 'api:favorite_detail', 'lookup_field': 'slug'},
+        }
 

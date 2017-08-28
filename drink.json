@@ -3,6 +3,8 @@
     "model": "favorites.drink",
     "pk": 1,
     "fields": {
+        "created": "2017-08-27T15:59:09.201Z",
+        "updated": "2017-08-27T15:59:29.249Z",
         "name": "cocacola",
         "slug": "cocacola"
     }
@@ -11,6 +13,8 @@
     "model": "favorites.drink",
     "pk": 2,
     "fields": {
+        "created": "2017-08-27T15:59:09.201Z",
+        "updated": "2017-08-27T15:59:29.249Z",
         "name": "Fanta",
         "slug": "fanta"
     }
@@ -19,6 +23,8 @@
     "model": "favorites.drink",
     "pk": 3,
     "fields": {
+        "created": "2017-08-27T15:59:09.201Z",
+        "updated": "2017-08-27T15:59:29.249Z",
         "name": "Sprite",
         "slug": "sprite"
     }
@@ -27,6 +33,8 @@
     "model": "favorites.drink",
     "pk": 4,
     "fields": {
+        "created": "2017-08-27T15:59:09.201Z",
+        "updated": "2017-08-27T15:59:29.249Z",
         "name": "Stonny",
         "slug": "stonny"
     }
@@ -35,6 +43,8 @@
     "model": "favorites.drink",
     "pk": 5,
     "fields": {
+        "created": "2017-08-27T15:59:09.201Z",
+        "updated": "2017-08-27T15:59:29.249Z",
         "name": "Fanta Orange",
         "slug": "fanta-orange"
     }
