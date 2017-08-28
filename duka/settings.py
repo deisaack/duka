@@ -4,7 +4,7 @@ from django.contrib import messages
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '&4d%okc1wx6r#y&*&h2q63v=p+=92orqiy)l)%v$-s*8q8o4d='
-DEBUG = False
+DEBUG = True
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'deisaack@gmail.com'
@@ -122,8 +122,8 @@ MESSAGE_TAGS = {
 }
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '0.0.0.0', 'duka.herokuapp.com']
 
-if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 DATABASES = {
     'default': {
