@@ -95,45 +95,49 @@
 
     {% block splash %}
     {% endblock splash %}
-    
-    {% block container %}
+
     <div class="container">
-    <div>
+    <div class="col-sm-4 ">
+        <h2>Links: </h2>
+        <h3>Accounts</h3>
+        <a href="{% url 'accounts:login' %}">login</a>
+        <br>
+        <a href="{% url 'accounts:logout' %}">logout</a>
+        <br>
+        <a href="{% url 'accounts:signup' %}">signup</a>
+        <br>
+        <a href="{% url 'accounts:password-change' %}">password-change</a>
+        <br>
+        <a href="{% url 'accounts:password-reset' %}">password-reset</a>
+        <br>
+    <h3>
+        Profiles
+    </h3>
+        <a href="{% url 'profiles:collector_list' %}"> Collector List</a>
+        <br>
+        <a href="{% url 'profiles:show_self' %}">My profile</a>
+
+    <h3>favorites</h3>
+        <a href="{% url 'favorites:drink_create' %}">drink_create</a> <br>
+        <a href="{% url 'favorites:drink_list' %}">drink_list</a> <br>
+        <a href="{% url 'favorites:favorite_create' %}">favorite_create</a> <br>
+        <a href="{% url 'favorites:favorite_list' %}">favorite_list</a> <br>
+
+            <h3>Api</h3>
+        <a href="{% url 'api:favorite_list' %}">Favorite List</a>
+        <a href="{% url 'api:favorite_create' %}">Favorite Create</a>
+    </div>
+        <div class="col-sm-8">
 
         {% block content %}
 
 
         <h1>New Project</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <p class="lead">
+        </p>
         {% endblock %}
-              </div>
-
-    </div><!-- /.container -->
-    {% endblock container %}
-
-    <!-- Site footer -->
-{#    {% block footer %}#}
-{#      <!-- Some social button for contact will do -->#}
-{#      <a name="contact"></a>#}
-{#      <div class="container">#}
-{#            <div class="footer">#}
-{#        <div class="row">#}
-{#          <div class="col-lg-6">#}
-{#              <p>&copy; Company {% now 'Y' %}</p>#}
-{#          </div>#}
-{#          <div class="col-lg-6 text-right">#}
-{#            Connect with us on#}
-{#            <a href="#"><i class="fa fa-facebook"></i> Facebook</a> or#}
-{#            <a href="#"><i class="fa fa-twitter"></i> Twitter</a>#}
-{#          </div>#}
-{#        </div>#}
-{#            </div>#}
-{#      </div>#}
-{#    {% endblock %}#}
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     {% block scripts %}
