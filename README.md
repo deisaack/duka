@@ -127,6 +127,6 @@ sudo supervisorctl restart duka
 
 
 # Docker
-
-## there may be issues using docker because am using one of those old computers which doesn't have VT-X/AMD-v (Virtualization technology)   Keep calm though because i will be updating it soon. I have also made major configurations and i have availed necessary files. if you are a developer you cant be troubled making the changes or you may wait atleast a day and it gonna be alright
+<br>
+#### there may be issues using docker because am using one of those old computers which doesn't have VT-X/AMD-v (Virtualization technology)   Keep calm though because i will be updating it soon. I have also made major configurations and i have availed necessary files. if you are a developer you cant be troubled making the changes or you may wait atleast a day and it gonna be alright
 
