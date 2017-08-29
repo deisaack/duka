@@ -8,7 +8,7 @@ You can try logging in as superuser with admin@gmail.com password 1
 
 ## Create a database user and the application database:
 createuser duka <br>
-createdb my_db --owner u_urban <br>
+createdb my_db --owner duka_user <br>
 psql -c "ALTER USER admin WITH PASSWORD '123'" <br>
 
 ### clone the repo after creating a virtualenv. and add this to the /home/user/bin/gunicorn_start
@@ -57,7 +57,7 @@ stdout_logfile=/home/duka/logs/gunicorn-error.log</code></pre></figure>
 sudo supervisorctl reread <br />
 sudo supervisorctl update
 
-<p>Add a new configuration file named <strong>urban</strong> inside <strong>/etc/nginx/sites-available/</strong>:</p>
+<p>Add a new configuration file named <strong>duka</strong> inside <strong>/etc/nginx/sites-available/</strong>:</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo vim /etc/nginx/sites-available/duka</code></pre></figure>
 
@@ -116,7 +116,7 @@ server {
 <hr>
 <hr><br>
 <span class="nb">source </span>bin/activate
-<span class="nb">cd </span>urban-train
+<span class="nb">cd </span>duka
 git pull origin master
 python manage.py collectstatic
 python manage.py migrate
