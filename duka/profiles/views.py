@@ -8,8 +8,41 @@ from . import models
 from . models import Collector
 from braces import views as bracesviews
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 
 User = get_user_model()
+
+
+from .models import Document, PrivateDocument
+
+
+class DocumentCreateView(CreateView):
+    model = Document
+    fields = ['upload', ]
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super(DocumentCreateView, self).get_context_data(**kwargs)
+        documents = Document.objects.all()
+        context['documents'] = documents
+        return context
+
+
+@method_decorator(login_required, name='dispatch')
+class PrivateDocumentCreateView(CreateView):
+    model = PrivateDocument
+    fields = ['upload', ]
+    success_url = reverse_lazy('profile')
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return super(PrivateDocumentCreateView, self).form_valid(form)
+
 
 class CollectorDetailView(generic.DetailView):
     model = Collector

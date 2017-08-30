@@ -3,7 +3,20 @@ from django.conf import settings
 from django.utils.text import slugify
 from geoposition.fields import GeopositionField
 from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
 
+from duka.storage_backends import PrivateMediaStorage
+
+
+class Document(models.Model):
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    upload = models.FileField()
+
+
+class PrivateDocument(models.Model):
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    upload = models.FileField(storage=PrivateMediaStorage())
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='documents')
 
 class Location(models.Model):
     name = models.CharField(max_length=50, unique=True)

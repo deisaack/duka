@@ -8,4 +8,6 @@ urlpatterns = [
     url(r'^p/(?P<slug>[\w\-]+)$', views.CollectorDetailView.as_view(), name='collector_detail'),
     url(r'^p/(?P<slug>[\w\-]+)$', views.ShowProfile.as_view(),
             name='show'),
+    url(r'^doc/$', views.DocumentCreateView.as_view(), name='home'),
+    url(r'^pdoc/$', views.PrivateDocumentCreateView.as_view(), name='profile'),
 ]

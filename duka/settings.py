@@ -2,21 +2,44 @@ import os
 from decouple import config
 from django.contrib import messages
 from django.core.urlresolvers import reverse_lazy
-ADMINS = config('ADMINS')
+ADMINS = (
+  ('Prof. Isaac', 'deisaack@gmail.com'),
+)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 AUTH_USER_MODEL = 'authtools.User'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+
+
+AWS_STATIC_LOCATION = 'static'
+STATICFILES_STORAGE = 'duka.storage_backends.StaticStorage'
+
+AWS_PUBLIC_MEDIA_LOCATION = 'media/public'
+DEFAULT_FILE_STORAGE = 'duka.storage_backends.PublicMediaStorage'
+
+AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
+PRIVATE_FILE_STORAGE = 'duka.storage_backends.PrivateMediaStorage'
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PWD_KEY'),
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD': config('DB_PWD_KEY'),
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 # import dj_database_url
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
@@ -51,6 +74,7 @@ INSTALLED_APPS = [
     'braces',
     'easy_thumbnails',
     'geoposition',
+    'storages',
 ]
 LANGUAGE_CODE = 'en-us'
 LIVE_DIR = os.path.join(BASE_DIR, "live")
@@ -82,9 +106,11 @@ ROOT_URLCONF = 'duka.urls'
 SECRET_KEY = config('SECRET_KEY')
 SITE_ID = 1
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_ROOT = os.path.join(LIVE_DIR, "static")
-STATIC_URL = '/static/'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+# STATIC_URL = '/static/'
 THUMBNAIL_EXTENSION = 'png'
 TEMPLATES = [
     {
@@ -110,12 +136,12 @@ WSGI_APPLICATION = 'duka.wsgi.application'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
     }
+}
 if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {
