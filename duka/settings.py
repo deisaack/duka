@@ -5,7 +5,7 @@ from django.core.urlresolvers import reverse_lazy
 ADMINS = (
   ('Prof. Isaac', 'deisaack@gmail.com'),
 )
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1', '0.0.0.0', 'duka.herokuapp.com']
 AUTH_USER_MODEL = 'authtools.User'
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
@@ -35,7 +35,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 #         'NAME': config('DB_NAME'),
 #         'USER': config('DB_USER'),
-#         'PASSWORD': config('DB_PWD_KEY'),
+#         'PASSWORD': config('DB_KEY'),
 #         'HOST': 'localhost',
 #         'PORT': '',
 #     }
@@ -44,12 +44,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # db_from_env = dj_database_url.config()
 # DATABASES['default'].update(db_from_env)
 DEBUG = config('DEBUG', cast=bool)
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
-EMAIL_HOST = config('EMAIL_HOST')
+DEFAULT_FROM_EMAIL = "Isaac <deisaack@yahoo.com>"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_USER = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
 # GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyD2XP6khyd123inKasJ2NxfWodaqYO_HqY'
 GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCKKERHiiwDU37DQ719Uj93bXVlSGRMn9U'
 # GEOPOSITION_GOOGLE_MAPS_API_KEY = config('GEOPOSITION_GOOGLE_MAPS_API_KEY')
