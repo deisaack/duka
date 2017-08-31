@@ -30,19 +30,22 @@ PRIVATE_FILE_STORAGE = 'duka.storage_backends.PrivateMediaStorage'
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': config('DB_NAME'),
-#         'USER': config('DB_USER'),
-#         'PASSWORD': config('DB_KEY'),
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-# import dj_database_url
-# db_from_env = dj_database_url.config()
-# DATABASES['default'].update(db_from_env)
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_KEY'),
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+import dj_database_url
+try:
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
+except:
+    pass
 DEBUG = config('DEBUG', cast=bool)
 DEFAULT_FROM_EMAIL = "Isaac <deisaack@yahoo.com>"
 EMAIL_HOST = 'smtp.gmail.com'
@@ -136,12 +139,12 @@ WSGI_APPLICATION = 'duka.wsgi.application'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
+        }
     }
-}
 if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {
