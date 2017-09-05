@@ -1,13 +1,14 @@
 from __future__ import unicode_literals
 from authtools import forms as authtoolsforms
 from django import forms
-from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Submit, Field
 from django.contrib.auth import get_user_model
 from .models import Collector
 
 User = get_user_model()
 
+class JoinForm(forms.Form):
+    email = forms.EmailField()
+    name = forms.CharField(max_length=120)
 
 class CollectorCreateForm(authtoolsforms.UserCreationForm):
     pass

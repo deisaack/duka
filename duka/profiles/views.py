@@ -6,17 +6,21 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from . import forms
 from . import models
 from . models import Collector
-from braces import views as bracesviews
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-
+from .mixins import AjaxFormMixin
 User = get_user_model()
 
 
 from .models import Document, PrivateDocument
+
+class JoinFormView(AjaxFormMixin, generic.FormView):
+    form_class = forms.JoinForm
+    template_name = 'profiles/ajax_form.html'
+    success_url = '/'
 
 
 class DocumentCreateView(CreateView):

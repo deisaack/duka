@@ -3,6 +3,8 @@ from rest_framework.generics import (CreateAPIView, DestroyAPIView, ListAPIView,
                                      RetrieveAPIView, RetrieveUpdateAPIView)
 from .serializers import (FavoriteCreateUpdateSerializer, FavoriteDetailSerializer,
                           FavoriteListSerializer)
+from rest_framework import viewsets
+
 
 
 class FavoriteCreateAPIView(CreateAPIView):
@@ -36,4 +38,7 @@ class FavoriteListAPIView(ListAPIView):
     serializer_class = FavoriteListSerializer
 
 
-
+class FavoriteViewSet(viewsets.ModelViewSet):
+    queryset = Favorite.objects.all()
+    serializer_class = FavoriteCreateUpdateSerializer
+    permission_classes = []

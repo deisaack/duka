@@ -9,23 +9,22 @@ ALLOWED_HOSTS= ['localhost', '.herokuapp.com', '127.0.0.1', '0.0.0.0', 'duka.her
 AUTH_USER_MODEL = 'authtools.User'
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-AWS_S3_OBJECT_PARAMETERS = {
-    'CacheControl': 'max-age=86400',
-}
-AWS_LOCATION = 'static'
-
-
+# AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+# AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_OBJECT_PARAMETERS = {
+#     'CacheControl': 'max-age=86400',
+# }
+# AWS_LOCATION = 'static'
+#
+#
 AWS_STATIC_LOCATION = 'static'
-STATICFILES_STORAGE = 'duka.storage_backends.StaticStorage'
 
 AWS_PUBLIC_MEDIA_LOCATION = 'media/public'
-DEFAULT_FILE_STORAGE = 'duka.storage_backends.PublicMediaStorage'
-
+# DEFAULT_FILE_STORAGE = 'duka.storage_backends.PublicMediaStorage'
+#
 AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
-PRIVATE_FILE_STORAGE = 'duka.storage_backends.PrivateMediaStorage'
+# PRIVATE_FILE_STORAGE = 'duka.storage_backends.PrivateMediaStorage'
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,8 +57,6 @@ GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyCKKERHiiwDU37DQ719Uj93bXVlSGRMn9U'
 # GEOPOSITION_GOOGLE_MAPS_API_KEY = config('GEOPOSITION_GOOGLE_MAPS_API_KEY')
 GOOGLE_RECAPTCHA_SECRET_KEY = config('GOOGLE_RECAPTCHA_SECRET_KEY')
 INSTALLED_APPS = [
-    'rest_framework',
-
     'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -71,7 +68,9 @@ INSTALLED_APPS = [
     'duka.accounts',
     'duka.profiles',
     'duka.favorites',
+    'duka.files',
 
+    'rest_framework',
     'crispy_forms',
     'authtools',
     'braces',
@@ -111,9 +110,11 @@ SITE_ID = 1
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+if not DEBUG:
+    STATICFILES_STORAGE = 'duka.storage_backends.StaticStorage'
+
 STATIC_ROOT = os.path.join(LIVE_DIR, "static")
-STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-# STATIC_URL = '/static/'
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 THUMBNAIL_EXTENSION = 'png'
 TEMPLATES = [
     {
@@ -145,6 +146,8 @@ if DEBUG:
             'NAME': os.path.join(BASE_DIR, 'db3.sqlite3'),
         }
     }
+    STATIC_URL = '/static/'
+
 if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {

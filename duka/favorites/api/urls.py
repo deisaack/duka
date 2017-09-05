@@ -1,6 +1,12 @@
 from django.conf.urls import url, include
 from rest_framework.urlpatterns import format_suffix_patterns
 from . import views
+from .views import FavoriteViewSet
+from rest_framework.routers import DefaultRouter
+
+# router = DefaultRouter()
+# router.register(r'users', FavoriteViewSet, base_name='favorite')
+# urlpatterns = router.urls
 
 urlpatterns = [
     url(r'^create/$', views.FavoriteCreateAPIView.as_view(), name='favorite_create'),
